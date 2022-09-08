@@ -2,23 +2,19 @@ extends ../layout.pug
 include ../mixins/boardtable.pug
 
 block head
-	title #{meta.siteName}
+	title Lusochan
 
 block content
-	h1.board-title #{meta.siteName}
+	h1.board-title Lusochan
 	.table-container.flex-center.mv-10.text-center
-		table
-			tr
-				th.alt Welcome
-			tr
-				td
+
 					pre.no-m-p
-						| The site administrator should edit views/pages/home.pug, then run "pm2 reload all" and "gulp html" to customise this page.
+						
 	if recentNews && recentNews.length > 0
 		.table-container.flex-center.mv-10
 			table.newstable
 				tr
-					th(colspan=3) Latest News
+					th(colspan=3) Not&iacute;cias
 				each post in recentNews
 					tr
 						td
@@ -73,7 +69,7 @@ block content
 		.table-container.flex-center.mv-10.text-center
 			table(style='max-width:450px')
 				tr
-					th Local Stats
+					th Estat&iacute;sticas
 				tr
 					td
 						pre.no-m-p

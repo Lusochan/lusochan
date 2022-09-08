@@ -14,48 +14,48 @@ block content
 				th Frequently Asked Questions
 			tr
 				td.post-message
-					b General
+					b Geral
 					ul.mv-0
-						li: a(href='#whats-an-imageboard') What is an imageboard?
-						li: a(href='/rules.html') What are the rules?
-						li: a(href='#contact') How can I contact the administration?
-					b Making posts
+						li: a(href='#whats-an-imageboard') Lusochan
+						li: a(href='/rules.html') Quais s&atilde;o as regras?
+						li: a(href='#contact') Como posso contactar a administra&ccedil;&atilde;o?
+					b Postes
 					ul.mv-0
-						li: a(href='#name-formatting') How do names, tripcodes and capcodes work?
-						li: a(href='#post-styling') What kind of styling options are available when making a post?
-						li: a(href='#post-info') What is the file size limit?
-					b Boards, users & permissions
+						li: a(href='#name-formatting') Como funcionam os nomes, tripcodes e capcodes?
+						li: a(href='#post-styling') Que op&ccedil;&otilde;es de formata&ccedil;&atilde;o est&atilde;o disponiveis para criar um poste?
+						li: a(href='#post-info') Qual o limite de tamanho para postar ficheiros?
+					b T&aacute;buas, utilizadores e permiss&otilde;es
 					ul.mv-0
-						li: a(href='#make-a-board') How do I make my own board?
-						li: a(href='#antispam') What do the board settings for antispam do?
-						li: a(href='#archive-reverse-url-format') What is the archive/reverse image search link url format?
+						li: a(href='#make-a-board') Como fa&ccedil;o a minha t&aacute;bua?
+						li: a(href='#archive-reverse-url-format') Qual o formato do link para pesquisa de imagens?
 	.table-container.flex-center.mv-5
 		.anchor#whats-an-imageboard
 		table
 			tr
-				th: a(href='#whats-an-imageboard') What is an imageboard?
+				th: a(href='#whats-an-imageboard') Lusochan
 			tr
 				td
 					p
-						| An imageboard is a type of discussion board where users share images and text about various topics. 
+						| Lusochan &eacute; um site de discuss&atilde;o an&oacute;nima e n&atilde;o tem qualquer tipo de ideologia. 
 					p
-						| The primary difference between imageboards and traditional forums is that anybody can make a post without registering 
-						| an account or providing any personal information. This lowers the barrier to entry, protects user identities and focuses on what is said, rather than who says it. 
+						| O conte&uacute;do criado por utilizadores deste site &eacute; da responsabilidade dos mesmos. 
+					p
+						| https://lusochan.com - https://lusochan.net - https://twitter.com/lusochan
 	.table-container.flex-center.mv-5
 		.anchor#name-formatting
 		table
 			tr
-				th: a(href='#name-formatting') Name formatting
+				th: a(href='#name-formatting') Como funcionam os nomes, tripcodes e capcodes?
 			tr
 				td.post-message
-					p When posting, you can format the name field to include a name, tripcode , capcode, any combination of the three including leaving the field completely blank. Instead of a blank name,  "Anonymous" is used, however this depends on board-specific configuration. The optional components are explained below.
+					p No campo &quot;Name&quot; podes incluir um nome, tripcode, capcode, uma combina&ccedil;&atilde;o dos tr&ecirc;s ou deixar o campo em branco e o nome &quot;An&oacute;nimo&quot; vai ser utilizado.
 
-					b Format
+					b Formato
 					p 
-						| Names should be input like: 
+						|  
 						input(disabled='true' spellcheck='false' type='text' value='Name##Tripcode## Capcode')
-						| . Tripcode and capcode are optional components. Please note the whitespace before capcodes is significant. 
-					p Valid examples: 
+						|  
+					p Exemplos: 
 					ol.mv-0
 						li name
 						li #tripcode
@@ -69,8 +69,7 @@ block content
 						li #tripcode## capcode
 						li ##tripcode## capcode
 						li ##
-					p The last example is considered a blank capcode and can be used as a shortcut to display your role. Additionally, if a user has multiple aplicable roles (e.g. a board owner, but the user is also global staff) capcodes will default to their lowest role. To show the higher role, you must be explicit and precede any capcode with the role name e.g. ## Global Staff or ## Global Staff capcode
-					p Each component can be used in combination or independently. In a post number 9 would look like:
+					p Cada componente pode ser usado em combina&ccedil;&atilde;o ou em separado.
 						-
 							const examplePost = {
 								"date" : new Date("2019-08-02T09:48:44.180Z"),
@@ -93,16 +92,7 @@ block content
 								"postId" : 123
 							}	
 						+post(examplePost)
-					p The name appears bold in the top left, followed by the tripcode in regular weight with a !! prefix, then the capcode in a different color, bold and with a ## prefix. The colours may vary between themes but are generally distinct from each other
-
-					b Name
-					p The name is simply what name you want to be shown alongside your post. Other users can post with the same name so there is nothing preventing impersonation. This is not related to your username (for registered users).
-
-					b Tripcode
-					p A tripcode is a password of sorts, which users can provide in the tripcode component of their name. This tripcode is used in conjunction with a server-known secret to generate a unique* tripcode portion of the name. Long, unique tripcodes can be used as a form of identity. It is important that you keep tripcodes secret if you use them for some form of identity. A compromised tripcode can be used for impersonation and cannot be revoked in any way. Single # before tripcodes will use the traditional (what is now sometimes known as "insecure") tripcode algorithm shared by many imageboard softwares and websites. Double # before tripcodes will use a sha256 hash with server-side secret for a more secure, non-portable tripcode.
-
-					b Capcode
-					p A capcode is a component of the name field only available to authenticated users. This includes admins, global staff, board owners and board moderators. If there is no text after the ##, the role will be displayed alone. Leaving a space and putting custom text will be prefixed by the role name. This way, the role is always shown to prevent role impersonation.
+					
 	.table-container.flex-center.mv-5
 		.anchor#post-styling
 		table
@@ -194,78 +184,26 @@ block content
 						| ∧＿∧
 						| ( ・ω・) Let's try that again.
 			tr
-				td(colspan=2)
-					| Supported languages for code block syntax highlighting: 
-					a(rel='nofollow' referrerpolicy='same-origin' target='_blank' href='https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md') https://github.com/highlightjs/highlight.js/blob/master/SUPPORTED_LANGUAGES.md
-					| . 
-					| If you do not specify a language, a subset of languages is supported for auto-detection: #{codeLanguages.join(', ')}. 
-					| If the language is "plain", an unsupported value, or the auto-detect confidence is too low, highlighting is disabled for the code block. 
-					| If the language is "aa", the font will be adjusted for Japanese Shift JIS art.
-	.table-container.flex-center.mv-5
+				.table-container.flex-center.mv-5
 		.anchor#post-info
 		table
 			tr
-				th: a(href='#post-info') What is the file size limit?
+				th: a(href='#post-info') Qual o limite de tamanho para postar ficheiros?
 			tr
 				td
-					p Max size of form data per-post is #{postFilesSize}. Because other fields e.g. name, message, etc contribute to this, the maximum size of file uploads will be very slightly smaller than this.
-	.table-container.flex-center.mv-5
-		.anchor#moderation
-		table
-			tr
-				th: a(href='#moderation') How does moderation work?
-			tr
-				td.post-message
-					b Local vs. Global reports
-					p
-						| There exists the concept of "local" and "global" reports. Reporting a post locally will show the post along with reports on the report page for that particular board, and the reports 
-						| may be actioned upon by the board staff. Reporting a post globally will show the post along with reports on the global manage page available only to global staff and may be actioned upon by global staff. 
-						| Global reports should be used to flag posts that violate global rules such as illegal content or spam, in contrast to local reports which are for posts that abide by global rules but break 
-						| board-specific rules (which may be made arbitrarily by board staff). It is also possible to be banned from a board or globally for abuse of the report system.
-					b Batch processing of posts
-					p
-						| Each post has a checkbox in the top left to select it for moderation actions. Multiple posts may be selected to allow batch processing e.g. reporting multiple offending posts in one request. 
-						| The same is present in moderation interfaces. Some actions for example bans (which are based on IP) may also be handled in batches. Selecting multiple posts and using the ban action will 
-						| apply a single ban for each unique IP of the selected posts.
-					b Time format in moderation interfaces
-					p
-						| Some moderation interfaces, for example the ban duration when moderating posts, or the ban duration for post filtering use a shorthand for times/length. This format supports years, months, weeks, days, hours, minutes and seconds.
-						| An input of "3mo" would mean 3 months and "1y2mo3w4d5h6m7s" would mean 1 year, 2 months, 3 weeks, 4 days, 5 hours, 6 minutes and 7 seconds. Units of time should be in descending order, so "2w1mo" is invalid.
-						| However you may use "6w" for example to input 6 weeks, and are not required to use "1mo2w".
+					p #{postFilesSize}.
 	.table-container.flex-center.mv-5
 		.anchor#make-a-board
 		table
 			tr
-				th: a(href='#make-a-board') How do I make my own board?
+				th: a(href='#make-a-board') Como fa&ccedil;o uma t&aacute;bua?
 			tr
 				td
 					p
-						a(href='/register.html') Register
-						|  an account, then 
-						a(href='/create.html') create a board
-						|. Please avoid making excessive amounts of boards, duplicate or boards similar to an existing one unless you expect that many users will migrate to the new board for whatever reason e.g. tyrannical moderation.
-	.table-container.flex-center.mv-5
-		.anchor#antispam
-		table
-			tr
-				th: a(href='#antispam') What do the board settings for antispam do?
-			tr
-				td
-					p Lock Mode: Choose to lock posting new threads or all posts.
-					p Captcha Mode: Choose to enforce captchas for posting threads or all posts.
-					p PPH Trigger Threshold: Trigger an action after a certain amount of PPH.
-					p PPH Trigger Action: The action to trigger.
-					p TPH Trigger Threshold: Trigger an action after a certain amount of TPH.
-					p TPH Trigger Action: The action to trigger.
-					p Trigger Reset Lock Mode: If a trigger threshold was reached, reset the lock mode to this at the end of the hour.
-					p Trigger Reset Captcha Mode: If a trigger threshold was reached, reset the captcha mode to this at the end of the hour.
-					p Early 404: When a new thread is posted, delete any existing threads with less than #{early404Replies} replies beyond the first 1/#{early404Fraction} of threads.
-					p Disable anonymizer file posting: Prevent users posting images through anonymizers such as Tor hidden services, lokinet SNApps or i2p eepsites.
-					p Blocked Countries: Block country codes (based on geo Ip data) from posting.
-					p Filters: Newline separated list of words or phrases to match in posts. Checks name, message, email, subject, and filenames.
-					p Strict Filtering: More aggressively match filters, by normalising the input compared against the filters.
-					p Filter Mode: What to do when a post matches a filter.
-					p Filter Auto Ban Duration: How long to automatically ban for when filter mode is set to ban. Input the duration in time format described in the #[a(href='#moderation') moderation section].
+						a(href='/register.html') Registar
+						|  uma conta e 
+						a(href='/create.html') criar t&aacute;bua
+						|. Evitar t&aacute;buas duplicadas ou com temas parecidos.
 	.table-container.flex-center.mv-5
 		.anchor#archive-reverse-url-format
 		table
@@ -283,7 +221,7 @@ block content
 		.anchor#contact
 		table
 			tr
-				th: a(href='#contact') How can I contact the administration?
+				th: a(href='#contact') Como posso contactar a administra&ccedil;&atilde;o?
 			tr
 				td
-					p Example						
+					p admin@lusochan.com						
