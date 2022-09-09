@@ -5,7 +5,7 @@ mais um chan português
   <li>utilizadores podem criar t&aacute;buas</li>
   <li>m&uacute;ltiplos ficheiros por poste - 10MB total</li>
   <li>desenhos Tegaki</li>
-  <li>bonitos estilos/temas e cores</li>
+  <li>bonitos estilos, temas e cores</li>
 </ul> 
 
 
