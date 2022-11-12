@@ -1,3 +1,22 @@
+### 0.10.2
+  - Bugfix to 2fa, code-reuse prevention was blocking all codes rather than only a recently used correct code.
+
+### 0.10.1
+  - Minor nginx configuration change for twofactor.html.
+
+### 0.10.0
+  - Add account two factor authenticaiton (TOTP).
+  - Update dependencies.
+
+### 0.9.4
+  - Ability to add internal notes to bans. These are only seen by staff and not shown to the banned user.
+  - Wordfilter auto bans will set an internal note with which wordfilter was triggered.
+  - Fix zooming in on tabbed settings pages breaking when zoomed in on some browsers.
+  - Npm audit fix.
+
+### 0.9.3
+  - Vastly improve installation instructions & automated nginx configuration.
+
 ### 0.9.2
   - Bugfix an issue with bypasses/captcha related to difference between renewing vs getting new bypass.
 
