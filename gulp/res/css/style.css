@@ -927,6 +927,11 @@ input:invalid, textarea:invalid {
 	padding: 10px;
 }
 
+.logo {
+	display: block;
+	margin: auto;
+}
+
 .board-title {
 	color: var(--board-title);
 	font: bolder 28px Tahoma,sans-serif;
