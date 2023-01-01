@@ -10,14 +10,17 @@ const uploadDirectory = require(__dirname+'/../../lib/file/uploaddirectory.js')
 
 module.exports = async (req, res) => {
 
-	const { threads, postIds, postMongoIds } = res.locals.posts.reduce((acc, p) => {
-		acc.postIds.push(p.postId);
-		acc.postMongoIds.push(p._id);
-		if (p.thread === null) {
-			acc.threads.push(p);
-		}
-		return acc;
-	}, { threads: [], postIds: [], postMongoIds: [] });
+	const { threads, postIds, postMongoIds } = res.locals.posts
+		.sort((a, b) => {
+			return a.date - b.date; //could do postId, doesn't really matter.
+		}).reduce((acc, p) => {
+			acc.postIds.push(p.postId);
+			acc.postMongoIds.push(p._id);
+			if (p.thread === null) {
+				acc.threads.push(p);
+			}
+			return acc;
+		}, { threads: [], postIds: [], postMongoIds: [] });
 
 	//maybe should filter these? because it will include threads from which child posts are already fetched in the action handler, unlike the deleteposts model
 	const moveEmits = res.locals.posts.reduce((acc, post) => {
@@ -83,34 +86,45 @@ module.exports = async (req, res) => {
 			});
 		}
 	}
-
+	
 	//increase file/reply count in thread we are moving the posts to
-	const { replyposts, replyfiles } = res.locals.posts.reduce((acc, p) => {
-		acc.replyposts += 1;
-		acc.replyfiles += p.files.length;
-		return acc;
-	}, { replyposts: 0, replyfiles: 0 });
-
-	bulkWrites.push({
-		'updateOne': {
-			'filter': {
-				'postId': req.body.move_to_thread,
-				'board': req.params.board
-			},
-			'update': {
-				'$inc': {
-					'replyposts': replyposts,
-					'replyfiles': replyfiles,
+	if (!res.locals.destinationBoard) {
+		//recalculateThreadMetadata will handle cross board moves
+		const { replyposts, replyfiles } = res.locals.posts.reduce((acc, p) => {
+			acc.replyposts += 1;
+			acc.replyfiles += p.files.length;
+			return acc;
+		}, { replyposts: 0, replyfiles: 0 });
+		bulkWrites.push({
+			'updateOne': {
+				'filter': {
+					'postId': req.body.move_to_thread,
+					'board': req.params.board,
+				},
+				'update': {
+					'$inc': {
+						'replyposts': replyposts,
+						'replyfiles': replyfiles,
+					}
 				}
 			}
-		}
-	});
+		});
+	}
 
-	const movedPosts = await Posts.move(postMongoIds, req.body.move_to_thread).then(result => result.modifiedCount);
+	const destinationBoard = res.locals.destinationBoard ? res.locals.destinationBoard._id : req.params.board;
+	const crossBoard = destinationBoard !== req.params.board;
+	let destinationThreadId = res.locals.destinationThread ? res.locals.destinationThread.postId : (crossBoard ? null : postIds[0])
+		, movedPosts = 0;
+	({ destinationThreadId, movedPosts } = await Posts.move(postMongoIds, crossBoard, destinationThreadId, destinationBoard));
 
 	//emit markPost moves
 	for (let i = 0; i < moveEmits.length; i++) {
 		Socketio.emitRoom(moveEmits[i].room, 'markPost', { postId: moveEmits[i].postId, type: 'move', mark: 'Moved' });
+	}
+
+	//no destination thread specified (making new thread from posts), need to fetch OP as destinationThread for remarkup/salt
+	if (!res.locals.destinationThread) {
+		res.locals.destinationThread = await Posts.getPost(destinationBoard, destinationThreadId);
 	}
 
 	//get posts that quoted moved posts so we can remarkup them
@@ -159,13 +173,6 @@ module.exports = async (req, res) => {
 			}
 		}));
 	}
-
-/*
-- post A quotes B, then A is moved to another thread: WORKS (removes backlink on B)
-- moving post A back into thread with B and backlink gets readded: WORKS
-- move post B out and backlink from A gets removed: WORKS
-- moving post B post back into thread with A and backlinks re-added: FAIL (need to come up with solution, but this is an uncommon occurence)
-*/
 
 	//bulkwrite it all
 	if (bulkWrites.length > 0) {

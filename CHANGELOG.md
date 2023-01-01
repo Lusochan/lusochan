@@ -1,3 +1,25 @@
+### 0.11.1
+  - Bugfix non logged in users not able to use actions because of an issue in move post logic (thanks @some_random_guy).
+  - Bugfix editing posts from the actions form (not the new dropdown "Edit" button) always redirecting to OP.
+
+### 0.11.0
+  - Improve the fallback behaviour of live posts to work on connect_error instead of only reconnect_failed, and also attempt to upgrade again to the socket.
+  - The post form in modview now shows the full email field even with "sage only email", same as how the name field shows in modview with "force anon"
+  - Globals or users who are staff on multiple boards can move posts between boards
+  - IP/ban type display and suffixes improved to make IPv4/6/Bypass/Pruned IP clearer for more informed moderation.
+  - Post editing is now available as a link in the post dropdown, and makes a GET for the page (like editcustompage/editnews)
+  - Labelled link format markdown now supports mailto.
+  - "Hide name" set by default when using public actions form.
+  - Bugfix saveoverboard script so it works on catalog instead of only index, and improve the code to be more general and allow /catalog.html in navbar link.
+  - Bugfix BYPASS_CAPTCHA permission not able to be applied to roles.
+  - Add a small note on global account/role permission editing about the implication of setting "board management" permissions globally.
+  - Update README with some new related projects and change demo/test instance to 94chan.
+  - Globalmanage roles are now available in json format in the API.
+  - Improve some of the templates and refactor some repetitive bits into includes/mixins.
+  - Add and update some tests.
+  - Npm audit & dependencies updated.
+  - Buon Natale e buon anno 🎉
+
 ### 0.10.2
   - Bugfix to 2fa, code-reuse prevention was blocking all codes rather than only a recently used correct code.
 
