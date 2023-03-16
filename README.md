@@ -6,6 +6,7 @@
 Live instance: https://94chan.org
 >>>>>>> 4b396393dac503ad4592d79a9a5369ae9b32d307
 
+<<<<<<< HEAD
 mais um chan português
 <br>
  <ul>
@@ -15,11 +16,30 @@ mais um chan português
   <li>bonitos estilos, temas e cores</li>
   <li>bastantes recursos disponiveis para o utilizador</li>
 </ul> 
+=======
+API documentation: [fatchan/jschan-docs](https://gitgud.io/fatchan/jschan-docs/) - Gitgud pages link: https://fatchan.gitgud.site/jschan-docs/#introduction
+>>>>>>> 4cbac793f3857518e9f848108ab104c7430e98ed
 
 <br>
 <br>
 
+<<<<<<< HEAD
 ![screenshots](home_github_page.png "screenshots")
+=======
+## Features
+- [x] User created boards ala [infinity](https://github.com/ctrlcctrlv/infinity)
+- [x] Multiple files per post
+- [x] Antispam/Anti-flood & DNSBL
+- [x] 3 customisable inbuilt captchas + 2 third party captchas (hcaptcha & recaptcha)
+- [x] [API documentation](https://fatchan.gitgud.site/jschan-docs/)
+- [x] Built-in webring (compatible w/ [lynxchan](https://gitlab.com/alogware/LynxChanAddon-Webring) & [infinity](https://gitlab.com/Tenicu/infinityaddon-webring))
+- [x] [Tegaki](https://github.com/desuwa/tegaki) applet with drawing and replays
+- [x] Two factor authentication (TOTP) for accounts
+- [x] Manage everything from the web panel
+- [x] Detailed accounts permissions system
+- [x] Works properly with anonymizer networks (Tor, Lokinet, etc)
+- [x] Beautiful bundled frontend with lots of themes and options, see below:
+>>>>>>> 4cbac793f3857518e9f848108ab104c7430e98ed
 
 <<<<<<< HEAD
 =======
