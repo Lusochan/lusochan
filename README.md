@@ -7,6 +7,7 @@ Live instance: https://94chan.org
 >>>>>>> 4b396393dac503ad4592d79a9a5369ae9b32d307
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 mais um chan português
 <br>
  <ul>
@@ -19,6 +20,9 @@ mais um chan português
 =======
 API documentation: [fatchan/jschan-docs](https://gitgud.io/fatchan/jschan-docs/) - Gitgud pages link: https://fatchan.gitgud.site/jschan-docs/#introduction
 >>>>>>> 4cbac793f3857518e9f848108ab104c7430e98ed
+=======
+API documentation: [fatchan/jschan-docs](https://gitgud.io/fatchan/jschan-docs/) - Gitgud pages link: https://fatchan.gitgud.site/jschan-docs/#introduction
+>>>>>>> upstream/master
 
 <br>
 <br>
