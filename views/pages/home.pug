@@ -74,8 +74,8 @@ block content
 				tr
 					td
 						pre.no-m-p
-							| There are currently #[span.bold #{localStats.total-localStats.unlisted}] public boards, #[span.bold #{localStats.total}] in total. Sitewide, #[span.bold #{localStats.ppd}] post#{localStats.ppd === 1 ? ' has' : 's have'} been made in the last day, #[span.bold #{localStats.pph}] in the last hour, #[span.bold #{localStats.posts}] in total.
-							| #[span.bold #{fileStats.count}] file#{fileStats.count === 1 ? ' is' : 's are'} being served, totaling #[span.bold #{fileStats.totalSizeString}].
+							| #{__('There are currently %s public boards, %s in total. Sitewide, %s posts have been made in the last day, %s in the last hour, %s in total.', localStats.total-localStats.unlisted, localStats.total, localStats.ppd, localStats.pph, localStats.posts)}
+							| #{__('%s files are being served, totaling %s.', fileStats.count, fileStats.totalSizeString)}
 		if enableWebring === true && webringStats != null
 			.table-container.flex-center.mv-10.text-center
 				table(style='max-width:450px')
