@@ -1,10 +1,48 @@
-<<<<<<< HEAD
-=======
+### 1.0.2
+  - Translation improvements.
+
+### 1.0.1
+  - Translation improvements.
+  - Add a link to board in mod view e.g. /test/ on globalmanage recent posts to give some context.
+  - Fix dockerignore for docker testing/development, was broken due to translations
+
+### 1.0.0
+Version 1.0.0 is here. jschan is stable and mature enough and has been for a while. There's no need to go to version 0.9999.9999 and I am comfortable enough to call it "Version 1".
+Of course, that doesn't mean jschan is perfect or finished by any means. I want to keep improving jschan and there are plenty of new features and changes planned for versions 2, 3, and beyond.
+Thank you so much to all the jschan site admins, users & contributors for your help along the way. Your contributions have been invaluable to making this software great.
+Special shoutout to l29utp0 & loynet (ptchan.org), Homicide (94chan.org) and some_random_guy (trashchan.xyz).
+
+-Tom
+
+Now, back to the program. Here are the changes for 1.0.0:
+  - **Multiple language support.**
+
+jschan now supports language packs. There is a global and board-level language setting which completely translates the interface to another language. Using server side rendering and logic, so it remains noscript compatible.
+An effort has been made to translate everything, but given there is almost 4 years of code, some things may have slipped through the cracks. If something isn't translated, please report it on gitgud.
+    
+1.0.0 includes three* complete language packs:
+  - English (en-GB)
+  - Portuguese (pt-PT)
+  - Russian (ru-RU) *Machine translated, may not be accurate.
+
+Huge credit to the ptchan.org admins for providing the Portuguese translation.
+Contributions for new language packs or improvements to existing ones are very welcome! **Reach out via email, IRC, or session (See README.md) to discuss imbursement for contributing language packs.**
+Note: "global" pages e.g. overboards will adhere to global language setting. In a future iteration, these will be updated to (optionally, with global setting) support adhering to users browser language header for better UX going between a non-global language board and global pages.
+
+  - Notify the user when making a playlist from a thread if there were no files, rather than just silently logging.
+  - Improves the css and markup to only show the appropriate wording e.g "tap" or "click" in tooltips depending if you are on mobile/desktop.
+  - Improve the installation process to fix a potential issue with the database connection settings.
+  - Customflags will now show correctly when editing a post on a board with custom flags enabled.
+  - Security improvement to the 2FA validation flow during login.
+  - Log a few more errors related to hcaptcha/recaptcha, for debugging purposes. (already caught and returned in a friendly manner)
+  - Remove showing language and relevance data when auto detecting highlighted code block language.
+  - Add more themes (cybhub, digi, favela, ptchan, teletext).
+  - More minor bugfixes to permissions pages displays.
+
 ### 0.11.4
   - Bugfix for the message stating how many banners were deleted when deleting banners.
   - Add an option to limit the total resolution of an image/video (width*height).
 
->>>>>>> upstream/master
 ### 0.11.3
   - Fix max vs total upload count in controller for uploading board assets, flags and banners.
   - Move css theme assets to themes/assets instead of all lumped in one folder.
