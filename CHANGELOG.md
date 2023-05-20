@@ -1,10 +1,38 @@
+### 1.0.6
+  - Bugfix in translation of blocked country message when posting.
+  - Some Improvements to the Russian translation courtesy of an anon from bbs.quietplace.xyz. Handling of the complex plural rules in Russian will be improved in a future version.
+  - Npm audit.
+
+### 1.0.5
+  - Add pt-BR language pack, by @thugking from Rchan.
+  - Fix bypass not auto closing and submitting on non english locale.
+  - Actually fix Tor hidden service country name not displaying correctly.
+  - Make the error handling for "possible corrupt or unsupported file" catch more bad files and processing errors.
+  - Make animated webp thumbnailing at least work and not give the above error (not supporting animated thumbs like .gif yet).
+  - Add "ttf" extension to nginx snippets because some themes include fonts.
+  - Reorganize <input> styling, use accent-color property on <input> elements, by @disco.
+  - Add globalmanage setting for board default language.
+  - Fix an issue with the referer because of translation, and prevent invalid settings for it from breaking the web panel.
+  - Fix broken migration for board defaults causing language issues on newly created boards after updating from pre 1.0.0.
+  - Npm audit.
+
+### 1.0.4
+  - Translation improvements.
+  - Fix Tor hidden service country name not displaying correctly.
+  - Make global disabling of anonymizer file posting apply to board banners, flags, custompages.
+
+### 1.0.3
+  - Translation improvements.
+  - Add back missing "Lock+Unlist" mode for handling ianctive boards.
+  - Npm audit.
+
 ### 1.0.2
   - Translation improvements.
 
 ### 1.0.1
   - Translation improvements.
   - Add a link to board in mod view e.g. /test/ on globalmanage recent posts to give some context.
-  - Fix dockerignore for docker testing/development, was broken due to translations
+  - Fix dockerignore for docker testing/development, was broken due to translations.
 
 ### 1.0.0
 Version 1.0.0 is here. jschan is stable and mature enough and has been for a while. There's no need to go to version 0.9999.9999 and I am comfortable enough to call it "Version 1".
