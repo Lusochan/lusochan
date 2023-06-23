@@ -1,3 +1,15 @@
+### 1.1.1
+  - Bugfix live post updates triggering the disconnect and removal of postforms on non-OP delete/move.
+  - Improve text wrapping on long table data.
+  - Npm audit.
+
+### 1.1.0
+  - Posts edits and "USER WAS BANNED FOR THIS POST" messages will now be updated live through the websocket.
+  - Added Yandex Smart Captcha support, as an additional captcha type option.
+    - NOTE: This is still a WIP because Yandex does not support registration from my country and I am unable to get an API key. If you are able to share an API key for development purposes, please reach out via contact detaiils in README.md
+  - Fix pluralisation of thread stickying message.
+  - Fix some language mixups in translations.
+
 ### 1.0.6
   - Bugfix in translation of blocked country message when posting.
   - Some Improvements to the Russian translation courtesy of an anon from bbs.quietplace.xyz. Handling of the complex plural rules in Russian will be improved in a future version.
