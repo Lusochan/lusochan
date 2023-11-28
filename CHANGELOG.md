@@ -1,3 +1,9 @@
+### 1.4.0
+  - Add a new global management feature to clear all blockbypasses or all login sessions.
+  - Make (You)s sync over multiple tabs when posting or clearing.
+  - Update dependencies.
+  - Npm audit fix.
+
 ### 1.3.3
   - Fix the "Board Defaults" section in globamanagement settings being inaccessible, and update the template to be slightly more maintainable (especially for forks).
   - Make the message box focused by js when a page is opened with #postform.
