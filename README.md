@@ -8,8 +8,7 @@ Mirror(s):
 
 Live instances (Unofficial):
  - 🇺🇸 https://94chan.org
- - 🇵🇹 https://ptchan.org
- - 🇮🇳 https://indiachan.net
+ - 🇵🇹/🇧🇷 https://ptchan.org
 
 Contact via:
  - [Session](https://getsession.org/): `051b2ff270769d20764fa1b8e6bc3240b0a3c28ffb3242e7cce60db479b23ef427`
@@ -17,7 +16,7 @@ Contact via:
  - Email: see my gitgud profile
 
 ## Features
- - [x] Multiple language support (🇬🇧 🇵🇹 🇧🇷 🇷🇺 🇮🇹)
+ - [x] Multiple language support (🇬🇧 🇵🇹 🇧🇷 🇷🇺 🇮🇹 🇪🇸)
  - [x] Optional user created boards
  - [x] Multiple files per post
  - [x] Antispam/Anti-flood & DNSBL
@@ -63,5 +62,3 @@ Unofficial: **Not guaranteed to work or be safe, use at your own risk.**
 Bitcoin (BTC): [`bc1q4elrlz5puak4m9xy3hfvmpempnpqpu95v8s9m6`](bitcoin:bc1q4elrlz5puak4m9xy3hfvmpempnpqpu95v8s9m6)
 
 Monero (XMR): [`89J9DXPLUBr5HjNDNZTEo4WYMFTouSsGjUjBnUCCUxJGUirthnii4naZ8JafdnmhPe4NP1nkWsgcK82Uga7X515nNR1isuh`](monero:89J9DXPLUBr5HjNDNZTEo4WYMFTouSsGjUjBnUCCUxJGUirthnii4naZ8JafdnmhPe4NP1nkWsgcK82Uga7X515nNR1isuh)
-
-Oxen (OXEN): `LBjExqjDKCFT6Tj198CfK8auAzBERJX1ogtcsjuKZ6AYWTFxwEADLgf2zZ8NHvWCa1UW7vrtY8DJmPYFpj3MEE69CryCvN6`

@@ -42,8 +42,16 @@ Please ensure your hardware is supported before reporting issues. The complete p
 ```bash
 wget -qO - https://www.mongodb.org/static/pgp/server-7.0.asc | sudo apt-key add -
 echo "deb http://repo.mongodb.org/apt/debian $(lsb_release -sc)/mongodb-org/7.0 main" | sudo tee /etc/apt/sources.list.d/mongodb-org-7.0.list
-hsudo apt install -y mongodb-org
+sudo apt update
+sudo apt install -y mongodb-org
 sudo systemctl enable --now mongod
+```
+
+NOTE: If at this point, mongod doesn't start or has an error, fix the permissions ([stackoverflow](https://stackoverflow.com/questions/64608581/mongodb-code-exited-status-14-failed-but-not-any-clear-errors/66107451#66107451)):
+```bash
+sudo chown -R mongodb:mongodb /var/lib/mongodb
+sudo chown mongodb:mongodb /tmp/mongodb-27017.sock
+sudo service mongod restart
 ```
 
 [Enable authentication](https://www.mongodb.com/features/mongodb-authentication):
@@ -53,8 +61,6 @@ mongosh admin --eval "db.getSiblingDB('jschan').createUser({user: 'jschan', pwd:
 sudo sh -c "cat > /etc/mongod.conf" <<'EOF'
 storage:
   dbPath: /var/lib/mongodb
-  journal:
-    enabled: true
 systemLog:
   destination: file
   logAppend: true
